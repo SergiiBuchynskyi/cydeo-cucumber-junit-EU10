@@ -129,14 +129,15 @@ public class RegisterUserNazim {
     @Then("Verify that {string} username is visible..")
     public void verifyThatLoggedInAsUsernameIsVisible(String str) {
 
-       /* BrowserUtils.sleep(4);
+
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@id=\"aswift_1\"]")));
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@id=\"ad_iframe\"]")));//aswift_1
         Driver.getDriver().findElement(By.xpath("//div[@id='dismiss-button']")).click();
         Driver.getDriver().switchTo().defaultContent();
-        */
-        Driver.getDriver().navigate().refresh();
+
+        //Driver.getDriver().navigate().refresh();
         String expected = str + " " + username;
-        registerUserNazimPage.continueBtn.click();
+
        String actual = registerUserNazimPage.loggedInAsText.getText();// + " " + registerUserNazimPage.loggedInAsName.getText();
        Assert.assertEquals(actual,expected);
     }
