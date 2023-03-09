@@ -1,6 +1,6 @@
 node {
     stage('Clone code') {
-        git 'https://github.com/SergiiBuchynskyi/SeleniumProject'
+        git 'https://github.com/SergiiBuchynskyi/cydeo-cucumber-junit-EU10'
     }
 
     stage('Run tests'){
